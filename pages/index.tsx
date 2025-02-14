@@ -1,114 +1,59 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import Image from "next/image";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Header } from "@/components/layout/header/Header";
+import { Layout } from "@/components/layout/Layout";
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid min-h-screen grid-rows-[20px_1fr_20px] place-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20`}
-    >
-      <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-center font-[family-name:var(--font-geist-mono)] text-sm sm:text-left">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="rounded bg-black/[.05] px-1 py-0.5 font-semibold dark:bg-white/[.06]">
-              pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <Layout>
+      <div>
+        {/* ヘッダ */}
+        <Header />
 
-        <div className="flex flex-col items-center gap-4 sm:flex-row">
-          <a
-            className="flex h-10 items-center justify-center gap-2 rounded-full border border-solid border-transparent bg-foreground px-4 text-sm text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] sm:h-12 sm:px-5 sm:text-base"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="flex h-10 items-center justify-center rounded-full border border-solid border-black/[.08] px-4 text-sm transition-colors hover:border-transparent hover:bg-[#f2f2f2] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] sm:h-12 sm:min-w-44 sm:px-5 sm:text-base"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        {/* メイン */}
+        <main>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+            ipsam nihil commodi, laudantium repudiandae, dolorem sed neque eaque
+            laboriosam quae consequuntur, dolor possimus beatae. Voluptates
+            fugit dicta eos labore laborum iusto officia excepturi quam animi
+            quas quod inventore dolor accusamus cumque mollitia quasi, molestias
+            dolorem sint sed nulla voluptate officiis ipsa! Iure voluptate et
+            delectus facere deserunt quo doloremque nostrum dolorum repellendus,
+            vitae aut excepturi. Vel quae ipsam eos quibusdam. Sapiente facilis
+            itaque earum eius tempora. Sint mollitia quas animi magnam
+            voluptatibus similique, est ducimus dolores ipsam nobis numquam
+            velit minima, dolore, explicabo voluptate voluptates doloremque.
+            Temporibus sapiente blanditiis perspiciatis?
+          </p>
+          <p>
+            Corporis ratione id molestias! Odit tempora autem nobis delectus
+            ducimus culpa illo eos eius vitae ullam, mollitia in magni aperiam
+            quos provident. Esse aspernatur rerum beatae maxime repellendus ex.
+            Dolor amet nemo libero vero ipsam tenetur. Ducimus, in sapiente
+            tempora quis commodi at. Possimus consequatur sint totam esse ut
+            quas quo sit quidem necessitatibus maiores deserunt minima ipsum,
+            eos sapiente, voluptatum accusantium vero architecto numquam fugit
+            soluta. Aliquam expedita quae consequatur magni sapiente libero
+            perspiciatis quidem, fuga, quo accusantium illo odio numquam
+            perferendis, laborum nostrum aspernatur est sed? Cumque eveniet
+            explicabo nostrum, dicta excepturi nisi alias modi ullam vel
+            obcaecati?
+          </p>
+          <p>
+            Itaque praesentium saepe sint aperiam aliquid consequatur, beatae
+            accusantium illo dolorum inventore autem commodi porro libero aut
+            possimus ab minima at earum cupiditate fugit natus fuga quisquam rem
+            tempora. Eos repellendus minus eius suscipit numquam eaque quasi
+            voluptate temporibus totam excepturi, alias distinctio tenetur
+            ducimus quae iure natus hic maxime dicta accusantium nesciunt
+            corrupti explicabo nisi quo! Similique temporibus voluptate minima
+            veniam autem ab nesciunt placeat consequatur blanditiis molestiae
+            eveniet, magni corporis minus quasi? Ut id ipsam molestiae quas.
+            Ipsum eos autem quam porro saepe laboriosam eaque, deleniti ut
+            ducimus quod natus aliquid, consequuntur ad? Dolorem eligendi
+            dolores cupiditate asperiores?
+          </p>
+        </main>
+      </div>
+    </Layout>
   );
 }
