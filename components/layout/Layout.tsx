@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono, Noto_Sans_JP } from "next/font/google";
 import type { ReactNode } from "react";
+import { Footer } from "@/components/layout/footer/Footer";
+import { Header } from "@/components/layout/header/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +27,11 @@ export const Layout = ({ children }: Props) => {
     <div
       className={`${geistSans.variable} ${geistMono.variable} ${NotoSans.variable} font-sans text-base`}
     >
-      <div className="min-h-screen bg-white">{children}</div>
+      <div className="min-h-screen bg-white">
+        <Header />
+        {children}
+        <Footer />
+      </div>
     </div>
   );
 };
