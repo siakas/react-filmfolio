@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Menu, Search } from "lucide-react";
-import { HeaderModeToggle } from "@/common/components/layout/header/HeaderModeToggle";
+import { ModeToggle } from "@/common/components/layout/ModeToggle";
 import { Button } from "@/common/components/ui/button";
 import { Input } from "@/common/components/ui/input";
 
@@ -33,7 +33,7 @@ export const Header = () => {
               <span className="sr-only">Search</span>
             </Button>
             {/* モード切り替えボタン */}
-            <HeaderModeToggle />
+            <ModeToggle />
             {/* ハンバーガーメニューボタン */}
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="size-5" />
