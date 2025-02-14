@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Menu, Search } from "lucide-react";
-import { HeaderModeToggle } from "@/components/layout/header/HeaderModeToggle";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { HeaderModeToggle } from "@/common/components/layout/header/HeaderModeToggle";
+import { Button } from "@/common/components/ui/button";
+import { Input } from "@/common/components/ui/input";
 
 export const Header = () => {
   return (

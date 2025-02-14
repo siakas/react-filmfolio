@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono, Noto_Sans_JP } from "next/font/google";
 import type { ReactNode } from "react";
-import { Footer } from "@/components/layout/footer/Footer";
-import { Header } from "@/components/layout/header/Header";
+import { Footer } from "@/common/components/layout/footer/Footer";
+import { Header } from "@/common/components/layout/header/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

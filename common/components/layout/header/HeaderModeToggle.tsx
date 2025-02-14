@@ -1,6 +1,6 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/common/components/ui/button";
 
 export const HeaderModeToggle = () => {
   const { theme, setTheme } = useTheme();
