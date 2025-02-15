@@ -1,6 +1,6 @@
 {
   "name": "react-filmfolio",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,7 +11,8 @@
     "lint:prettier": "prettier --check .",
     "fix": "run-s fix:prettier fix:eslint",
     "fix:eslint": "npm run lint:eslint -- --fix",
-    "fix:prettier": "npm run lint:prettier -- --write"
+    "fix:prettier": "npm run lint:prettier -- --write",
+    "ncu": "npx npm-check-updates --interactive --format group"
   },
   "dependencies": {
     "@radix-ui/react-scroll-area": "^1.2.3",
@@ -40,6 +41,7 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-tailwindcss": "^3.17.5",
     "eslint-plugin-unused-imports": "^4.1.4",
+    "npm-check-updates": "^17.1.14",
     "npm-run-all": "^4.1.5",
     "postcss": "^8",
     "prettier": "^3.4.2",
