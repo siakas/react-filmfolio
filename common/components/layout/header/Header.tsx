@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Menu, Search } from "lucide-react";
+import { MainNavigation } from "@/common/components/layout/header/MainNavigation";
 import { ModeToggle } from "@/common/components/layout/ModeToggle";
 import { Button } from "@/common/components/ui/button";
 import { Input } from "@/common/components/ui/input";
@@ -27,6 +28,7 @@ export const Header = () => {
               />
             </div>
             {/* メインナビゲーション */}
+            <MainNavigation />
             {/* モバイル向け検索ボタン */}
             <Button variant="ghost" size="icon" className="md:hidden">
               <Search className="size-5" />
