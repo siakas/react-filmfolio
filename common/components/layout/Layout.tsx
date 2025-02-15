@@ -25,9 +25,9 @@ type Props = {
 export const Layout = ({ children }: Props) => {
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable} ${NotoSans.variable} font-sans text-base`}
+      className={`${geistSans.variable} ${geistMono.variable} ${NotoSans.variable} font-sans text-base text-foreground`}
     >
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen">
         <Header />
         {children}
         <Footer />

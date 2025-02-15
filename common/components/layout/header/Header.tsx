@@ -23,7 +23,7 @@ export const Header = () => {
               <Input
                 type="search"
                 placeholder="タイトルから映画を探す"
-                className="w-52 lg:w-80"
+                className="w-52 bg-white lg:w-80"
               />
             </div>
             {/* メインナビゲーション */}
