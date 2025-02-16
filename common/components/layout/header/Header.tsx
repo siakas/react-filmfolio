@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Menu, Search } from "lucide-react";
+import { Logo } from "@/common/components/layout/header/Logo";
 import { MainNavigation } from "@/common/components/layout/header/MainNavigation";
 import { ModeToggle } from "@/common/components/layout/ModeToggle";
 import { Button } from "@/common/components/ui/button";
@@ -7,16 +7,10 @@ import { Input } from "@/common/components/ui/input";
 
 export const Header = () => {
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur">
       <div className="container m-auto flex h-16 items-center gap-x-4 sm:justify-between sm:gap-x-0">
-        <div className="flex items-center gap-6 sm:gap-10">
-          <Link href="/" className="block">
-            <span className="font-bold">FilmFolio</span>
-          </Link>
-          <p className="hidden text-sm text-muted-foreground md:block">
-            Manage your personal movie experience
-          </p>
-        </div>
+        <Logo />
+
         <div className="flex flex-1 items-center justify-end gap-x-4">
           <nav className="flex items-center gap-x-1">
             {/* 検索フォーム */}
