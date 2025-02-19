@@ -1,0 +1,55 @@
+name: Code Fix and Build Check
+
+on:
+  pull_request:
+    branches: ["develop"]
+  workflow_dispatch:
+
+jobs:
+  fix-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        id: node_modules_cache_id
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
+        run: npm ci
+
+      - name: List installed packages
+        run: npm ls --depth=0
+
+      - name: Run code formatting
+        run: npm run fix
+
+      - name: Commit and push changes if any
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git diff --quiet --exit-code || git commit -am "Auto-fix: Code formatting" || echo "No changes to commit"
+          git push || echo "Nothing to push"
+
+      - name: Build check
+        run: |
+          git switch -c temp-build-check
+          git merge origin/develop
+          npm run build
+          git switch ${{ github.event.pull_request.head.ref }}
