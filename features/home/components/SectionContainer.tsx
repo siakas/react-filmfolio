@@ -6,10 +6,11 @@ type Props = {
   children: ReactNode;
 };
 
-export const SectionContainer = ({ bg = "default", children }: Props) => {
+export const SectionContainer = (
+  { bg = "default", children }: Props) => {
   return (
     <section className={cn("py-8", bg === "muted" && "bg-muted")}>
-      <div className="container m-auto">{children}</div>
+    <div className="container m-auto">{children}</div>
     </section>
   );
 };
