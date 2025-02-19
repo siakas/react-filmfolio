@@ -3,5 +3,5 @@ type Props = {
 };
 
 export const SectionTitle = ({ title }: Props) => {
-  return <h2 className="font-bold tracking-tight mb-4 text-2xl">{title}</h2>;
+  return <h2 className="mb-4 text-2xl font-bold tracking-tight">{title}</h2>;
 };
