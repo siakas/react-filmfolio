@@ -12,7 +12,11 @@ export const MovieCarousel = () => {
   const trendingMovies = [
     { id: 1, title: "Movie 1", backdrop: "/placeholder.svg" },
     { id: 2, title: "Movie 2", backdrop: "/placeholder.svg" },
-    { id: 3, title: "Movie 3", backdrop: "/placeholder.svg" },
+    {
+      id: 3,
+      title: "Movie 3",
+      backdrop: "/placeholder.svg",
+    },
   ];
 
   return (
