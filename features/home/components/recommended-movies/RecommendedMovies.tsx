@@ -3,6 +3,18 @@ import axios from "axios";
 import { MovieList } from "@/features/home/components/movie-list/MovieList";
 import type { MovieResponse } from "@/types/movie";
 
+const useMovies = (url: string) => {
+  const getMovies = async () => {
+    const res = await axios.get<MovieResponse>(url);
+    return res.data.results;
+  };
+
+  return useQuery({
+    queryKey: [url],
+    queryFn: getMovies,
+  });
+};
+
 export const RecommendedMovies = () => {
   const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
   const BASE_URL = process.env.NEXT_PUBLIC_TMDB_API_BASE_URL;
@@ -15,30 +27,10 @@ export const RecommendedMovies = () => {
     popular: `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=${LANGUAGE}&page=1`,
   };
 
-  const getMovies = async (url: string) => {
-    const res = await axios.get<MovieResponse>(url);
-    return res.data.results;
-  };
-
-  const { data: nowPlayingData = [] } = useQuery({
-    queryKey: ["nowPlaying", requestUrl.nowPlaying],
-    queryFn: () => getMovies(requestUrl.nowPlaying),
-  });
-
-  const { data: topRatedData = [] } = useQuery({
-    queryKey: ["topRated", requestUrl.topRated],
-    queryFn: () => getMovies(requestUrl.topRated),
-  });
-
-  const { data: upcomingData = [] } = useQuery({
-    queryKey: ["upcoming", requestUrl.upcoming],
-    queryFn: () => getMovies(requestUrl.upcoming),
-  });
-
-  const { data: popularData = [] } = useQuery({
-    queryKey: ["popular", requestUrl.popular],
-    queryFn: () => getMovies(requestUrl.popular),
-  });
+  const { data: nowPlayingData = [] } = useMovies(requestUrl.nowPlaying);
+  const { data: topRatedData = [] } = useMovies(requestUrl.topRated);
+  const { data: upcomingData = [] } = useMovies(requestUrl.upcoming);
+  const { data: popularData = [] } = useMovies(requestUrl.popular);
 
   return (
     <>
