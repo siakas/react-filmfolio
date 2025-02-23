@@ -6,6 +6,7 @@ import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import tailwind from "eslint-plugin-tailwindcss";
 import unusedImports from "eslint-plugin-unused-imports";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 import tseslint from "typescript-eslint";
 
 export default [
@@ -44,6 +45,7 @@ export default [
   ...tseslint.configs.recommendedTypeChecked,
   ...tseslint.configs.strict,
   ...tailwind.configs["flat/recommended"],
+  ...pluginQuery.configs["flat/recommended"],
   {
     rules: {
       "no-unused-vars": "off",
