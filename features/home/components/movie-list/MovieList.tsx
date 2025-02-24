@@ -7,9 +7,19 @@ import type { Movie } from "@/types/movie";
 type Props = {
   title: string;
   movies: Movie[];
+  isLoading: boolean;
+  isError: boolean;
 };
 
-export const MovieList = ({ title, movies }: Props) => {
+export const MovieList = ({ title, movies, isLoading, isError }: Props) => {
+  if (isLoading) {
+    return <p>読み込み中...</p>;
+  }
+
+  if (isError) {
+    return <p>エラーが発生しました。</p>;
+  }
+
   return (
     <div className="mb-8">
       <div className="mb-1 flex items-center justify-between">
@@ -21,7 +31,7 @@ export const MovieList = ({ title, movies }: Props) => {
 
       <ScrollArea>
         <div className="flex gap-x-4 pb-4">
-          {movies?.map((movie) => (
+          {movies.map((movie) => (
             <Card
               key={movie.id}
               className="w-[150px] flex-none overflow-hidden border-none"
