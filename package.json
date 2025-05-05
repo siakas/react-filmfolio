@@ -6,12 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "run-p -l -c --aggregate-output lint:*",
-    "lint:eslint": "eslint .",
-    "lint:prettier": "prettier --check .",
-    "fix": "run-s fix:prettier fix:eslint",
-    "fix:eslint": "npm run lint:eslint -- --fix",
-    "fix:prettier": "npm run lint:prettier -- --write",
+    "lint": "biome lint . && eslint .",
+    "fix": "biome format --write . && eslint --fix .",
     "lib:update": "ncu --interactive --format group"
   },
   "dependencies": {
@@ -34,30 +30,23 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@eslint/compat": "^1.2.9",
     "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.26.0",
     "@next/eslint-plugin-next": "^15.3.1",
     "@tanstack/eslint-plugin-query": "^5.74.7",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@typescript-eslint/eslint-plugin": "^8.31.1",
-    "@typescript-eslint/parser": "^8.31.1",
     "eslint": "^9.26.0",
+    "eslint-config-biome": "^1.9.4",
     "eslint-config-next": "15.3.1",
-    "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-tailwindcss": "^3.18.0",
-    "eslint-plugin-unused-imports": "^4.1.4",
     "npm-check-updates": "^18.0.1",
-    "npm-run-all": "^4.1.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5",
-    "typescript-eslint": "^8.31.1"
+    "typescript": "^5"
   },
   "volta": {
     "node": "22.13.0"

@@ -1,13 +1,10 @@
-import js from "@eslint/js";
 import eslintPluginNext from "@next/eslint-plugin-next";
-import eslintConfigPrettier from "eslint-config-prettier";
+import pluginQuery from "@tanstack/eslint-plugin-query";
+import biome from "eslint-config-biome";
 import importPlugin from "eslint-plugin-import";
 import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import tailwind from "eslint-plugin-tailwindcss";
-import unusedImports from "eslint-plugin-unused-imports";
-import pluginQuery from "@tanstack/eslint-plugin-query";
-import tseslint from "typescript-eslint";
 
 export default [
   {
@@ -41,44 +38,11 @@ export default [
       },
     },
   },
-  js.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
-  ...tseslint.configs.strict,
   ...tailwind.configs["flat/recommended"],
   ...pluginQuery.configs["flat/recommended"],
   {
     rules: {
-      "no-unused-vars": "off",
       "object-shorthand": "error",
-    },
-  },
-  {
-    rules: {
-      "@typescript-eslint/no-unused-vars": "off",
-      "@typescript-eslint/consistent-type-imports": [
-        "error",
-        {
-          prefer: "type-imports",
-          fixStyle: "separate-type-imports",
-        },
-      ],
-    },
-  },
-  {
-    plugins: {
-      "unused-imports": unusedImports,
-    },
-    rules: {
-      "unused-imports/no-unused-imports": "error",
-      "unused-imports/no-unused-vars": [
-        "warn",
-        {
-          vars: "all",
-          varsIgnorePattern: "^_",
-          args: "after-used",
-          argsIgnorePattern: "^_",
-        },
-      ],
     },
   },
   {
@@ -158,5 +122,5 @@ export default [
       "@next/next/no-html-link-for-pages": "off",
     },
   },
-  eslintConfigPrettier,
+  biome,
 ];
